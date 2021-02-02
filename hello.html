@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>Мир jQuery</title>
+	</head>
+	<body>
+		<div id="menu">
+			<p><a href="1.html" class="open">Ссылка 1</a></p>
+			<p><a href="2.html" class="open">Ссылка 2</a></p>
+		</div>
+		<p><a href="3.html" class="open">Ссылка 3</a></p>
+
+		<script src="bootstrap-4.6.0-dist/js/jquery-3.5.1.min.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+
+				$(".open", "div#menu").css('background-color', 'silver');
+			});
+		</script>
+	</body>
+</html>

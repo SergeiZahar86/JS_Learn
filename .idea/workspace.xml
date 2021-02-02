@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d98f4b3-9a6c-46b5-a010-7fd48d2c34bd" name="Default Changelist" comment="" />
+    <list default="true" id="1d98f4b3-9a6c-46b5-a010-7fd48d2c34bd" name="Default Changelist" comment="1">
+      <change afterPath="$PROJECT_DIR$/CSS/first.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,10 +18,16 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="ProjectId" id="1nuG8JxJ4PaRpEcXOJXJe9ocUL9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -27,8 +37,19 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/JavaScriptLearn/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -39,17 +60,57 @@
       <option name="presentableId" value="Default" />
       <updated>1612232401721</updated>
       <workItem from="1612232402893" duration="29000" />
-      <workItem from="1612232470024" duration="395000" />
+      <workItem from="1612232470024" duration="2276000" />
     </task>
+    <task id="LOCAL-00001" summary="1">
+      <created>1612232943754</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1612232943754</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="2721" y="396" width="545" height="257" key="Github.ShareDialog" timestamp="1612232916394">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2721" y="396" width="545" height="257" key="Github.ShareDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1612232916394" />
+    <state x="2682" y="159" key="Github.UntrackedFilesDialog" timestamp="1612232922889">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2682" y="159" key="Github.UntrackedFilesDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1612232922889" />
+    <state width="1865" height="261" key="GridCell.Tab.0.bottom" timestamp="1612234606203">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1865" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1612234606203" />
+    <state width="1865" height="261" key="GridCell.Tab.0.center" timestamp="1612234606203">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1865" height="261" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1612234606203" />
+    <state width="1865" height="261" key="GridCell.Tab.0.left" timestamp="1612234606203">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1865" height="261" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1612234606203" />
+    <state width="1865" height="261" key="GridCell.Tab.0.right" timestamp="1612234606203">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1865" height="261" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1612234606203" />
     <state x="687" y="116" key="SettingsEditor" timestamp="1612232846178">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="687" y="116" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1612232846178" />
+    <state x="2372" y="192" key="Vcs.Push.Dialog.v2" timestamp="1612232950143">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2372" y="192" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1612232950143" />
   </component>
 </project>

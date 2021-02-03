@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org"  lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Фотографии</title>
+</head>
+<body>
+
+<div th:inline="text">
+    <h2>Левая сторона</h2>
+    <img th:src="${'/media/'+uidPart+'/'+idCar+'/0'}"></img>
+</div>
+<div th:inline="text">
+    <h2>Правая сторона</h2>
+    <img th:src="${'/media/'+uidPart+'/'+idCar+'/1'}"></img>
+</div>
+<div th:inline="text">
+    <h2>С верху</h2>
+    <img th:src="${'/media/'+uidPart+'/'+idCar+'/2'}"></img>
+</div>
+
+</body>
+</html>

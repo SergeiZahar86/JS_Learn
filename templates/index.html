@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  lang="ru">
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+    <script type="text/javascript" th:src="@{/js/test.js}"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Spring Boot JSP</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Главная</a></li>
+                <li><a href="#about">Обо мне</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="starter-template">
+        <h1>Пример Spring Boot Web JSP</h1>
+        <h2>Сообщение: ${message}</h2>
+        <button type="button" th:onclick="showAlert()">Show Alert</button>
+    </div>
+</div>
+<script type="text/javascript" th:src="@{${'/js/test.js?dt='+#dates.createNow().toInstant()}}"></script>
+<script type="text/javascript" th:src="@{${'/js/login.js?dt='+#dates.createNow().toInstant()}}"></script>
+</body>
+</html>

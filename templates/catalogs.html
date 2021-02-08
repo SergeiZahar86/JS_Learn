@@ -2,200 +2,249 @@
 	<head th:replace="~{components/head :: head(~{::link},~{::script})}">
 		<title>Партии</title>
 		<!--    <link rel="stylesheet" type="text/css" th:href="@{/css/tablePart.css}">-->
-		<link rel="stylesheet" type="text/css" th:href="@{/css/tablePart.css}">
-		<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
-		<script th:src="@{/js/catalogs.js}"></script>
-		<script th:src="@{/js/dnone.js}"></script>
+		<link rel="stylesheet" type="text/css" href="css/tablePart.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<script src="../static/js/catalogs.js"></script>
+		<script src="../static/js/dnone.js"></script>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css"
-		      th:href="@{/fonts/font-awesome-5.12.1/css/all.min.css}">
-		<link rel="stylesheet" type="text/css"
-		      th:href="@{/vendor/bootstrap/4.3/css/bootstrap.min.css}">
-		<link rel="stylesheet" type="text/css"
-		      th:href="@{/fonts/font-awesome-5.12.1/css/all.min.css}">
-		<link rel="stylesheet" type="text/css"
-		      th:href="@{/fonts/font-awesome-5.12.1/css/all.css}">
-		<script th:src="@{/vendor/jquery/jquery-3.4.1.min.js}"></script>
-		<script th:src="@{/vendor/bootstrap/js/popper.min.js}"></script>
-		<script th:src="@{/vendor/bootstrap/4.3/js/bootstrap.min.js}"></script>
-		<script th:src="@{/vendor/daterangepicker/moment.min.js?v=3.1}"></script>
+		<link rel="stylesheet" type="text/css" href="../static/fonts/font-awesome-5.12.1/css/all.min.css">
+		<link rel="stylesheet" href="../CSS/first.css">
+		<link rel="stylesheet" type="text/css" href="../static/vendor/bootstrap/4.3/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../static/fonts/font-awesome-5.12.1/css/all.min.css">
+		<link rel="stylesheet" type="text/css" href="../static/fonts/font-awesome-5.12.1/css/all.css">
+		<script src="../static/vendor/jquery/jquery-3.4.1.min.js"></script>
+		<script src="../static/vendor/bootstrap/js/popper.min.js"></script>
+		<script src="../static/vendor/bootstrap/4.3/js/bootstrap.min.js"></script>
+		<script src="../static/vendor/daterangepicker/moment.min.js?v=3.1"></script>
+		<!--3333333333333333333333333333333333333333333333333333333333333333333333333333333333333-->
+
+		<script src="../static/js/new.js"></script>
+		<link href="../static/vendor/select2/select2.css" rel="stylesheet"/>
+		<script src="../static/vendor/select2/select2.js"></script>
+
+
+		<!--3333333333333333333333333333333333333333333333333333333333333333333333333333333333333-->
 		<!-- Favicons -->
-		<link rel="apple-touch-icon" th:href="@{/favicons/apple-icon.png}"
+		<link rel="apple-touch-icon" href="../static/favicons/apple-icon.png"
 		      sizes="180x180">
-		<link rel="icon" th:href="@{/favicons/favicon-32x32.png}" sizes="32x32"
+		<link rel="icon" href="../static/favicons/favicon-32x32.png" sizes="32x32"
 		      type="image/png">
-		<link rel="icon" th:href="@{/favicons/favicon-16x16.png}" sizes="16x16"
+		<link rel="icon" href="../static/favicons/favicon-16x16.png" sizes="16x16"
 		      type="image/png">
-		<link rel="icon" th:href="@{/favicons/favicon.ico}">
+		<link rel="icon" href="../static/favicons/favicon.ico">
 	</head>
 	<body class="content-v">
 		<!--Главное меню-->
-		<nav th:replace="~{components/mainMenu}">
+		<nav class="navbar navbar-expand-lg ih-navbar">
+			<!--    <a href="/" title="Список Армов">-->
+			<span class="navbar-brand mr-3 text-danger"><img src="../static/images/logo-sm.png" width="24"/> Indas Cube</span>
+			<!--    </a>-->
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link white-text font-Calibri-14" href="@{/tablePart}">Партии</a>
+				</li>
+				<li authorize="hasRole('ROLE_portalAdmin')" class="nav-item">
+					<a class="nav-link white-text font-Calibri-14" href="@{/catalogs}">Справочники</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link white-text font-Calibri-14" href="@{/screen}">Экран</a>
+				</li>
+			</ul>
+			<span class="navbar-text">
+        <label class="mr-4 arm-name">Портал</label>
+				<!--        <input type="hidden font-Calibri-14" id="ih-user" th:value="${#httpServletRequest.remoteUser}"/>-->
+        <label class="mr-2 font-Calibri-14">[[${#httpServletRequest.remoteUser}]]</label>
+        <label class="mr-2"><a th:href="@{/changepassword}" class="btn btn-sm ih-btn-primary" title="Сменить пароль"><i
+		        class="fa fa-key"></i></a></label>
+        <a class="btn btn-sm ih-btn-primary" th:href="@{/logout}">Выход <i class="fa fa-sign-out-alt"></i></a>
+    </span>
 		</nav>
-		<div class="container">
-
-			<div class="row ">
-				<div class="col">
-					<div class="row justify-content-start">
-						<h2>Dropdown Example</h2>
-						<p>The data-toggle="dropdown" attribute is used to open the dropdown menu.</p>
-						<div class="dropdown">
-							<button class="btn btn-primary dropdown-toggle" onclick="drop_button()" id="menu1" type="button" data-toggle="dropdown">
-								Dropdown Example
-								<span class="caret"></span></button>
-							<select class="js-selectize" id="selText" name="city" placeholder="Выберите город">
-								<option value=""></option>
-								<option value="367">Абаза</option>
-								<option value="340">Абакан</option>
-								<option value="369">Абдулино</option>
-								<option value="370">Абинск</option>
-								<option value="371">Агидель</option>
-
-							</select>
-							<!--
-												<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-													<li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
-													<li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
-													<li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
-													<li role="presentation" class="divider"></li>
-													<li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
-												</ul>
-							-->
-						</div>
-					</div>
+		<div class="container-fluid">
+			<div class="row main">
+				<div class="col select1">
+					<select id="catal" class="select2">
+						<option selected>Укажите необходимый справочник...</option>
+						<option value="1">One</option>
+						<option value="2">Two</option>
+						<option value="3">Three</option>
+					</select>
 				</div>
-				<div class="col">
+				<div class="col-7 select1"></div>
 
-				</div>
 			</div>
 		</div>
 		<div class="container-fluid">
-			<div class="row">
-				<!--
-				<div class="col-12 col-md-3 col-xl-2 bd-sidebar">
-					&lt;!&ndash;<div class="padding-top-bottom-5 padding-left-right-10">
-						<div class="row padding-top-bottom-5">
-							<label class="font-Calibri-14">Начало периуда</label>
-							<input class="form-control validate-input"
-							       type="datetime-local" required id="start"/>
-						</div>
-						<div class="row padding-top-bottom-5">
-							<label class="font-Calibri-14">Окончание периуда</label>
-							<input class="form-control validate-input"
-							       type="datetime-local" required id="end"/>
-						</div>
-						<div class="row padding-top-bottom-5 find-button">
-							<button class="btn btn-success font-Calibri-14"
-							        onclick="onClickFindParts()">
-								Найти партии
-							</button>
-						</div>
-					</div>
-					<div class="row padding-top-bottom-5">
-						<div class="overflow-auto table-parts-max-height col-12">
-							<table class="table table-striped table-border" id="tParts">
-								&lt;!&ndash;                        <thead>&ndash;&gt;
-								&lt;!&ndash;                        <tr>&ndash;&gt;
-								&lt;!&ndash;                            <td class="table-dark"><span>Время начала</span></td>&ndash;&gt;
-								&lt;!&ndash;                            <td class="table-dark"><span>Время окончания</span></td>&ndash;&gt;
-								&lt;!&ndash;                            <td class="table-dark"><span>Аттестующий</span></td>&ndash;&gt;
-								&lt;!&ndash;                            <td class="table-dark"><span>Документы</span></td>&ndash;&gt;
-								&lt;!&ndash;                        </tr>&ndash;&gt;
-								&lt;!&ndash;                        </thead>&ndash;&gt;
-								<tbody id="tbodyParts" class="font-Calibri-14">
-								</tbody>
-							</table>
-						</div>
-					</div>&ndash;&gt;
-				</div>
--->
-				<div class="col-12 col-md-10 pl-md-4 bd-content">
-					<!--
-					<div class="row padding-top-bottom-5">
-						<div class="col-2">
-							<div class="row">
-								<span class="font-Calibri-14">Время начала аттестации:</span>
-							</div>
-							<div class="row">
-								<span id="partStartTime" class="font-Calibri-14"></span>
+			<div class="row justify-content-center d-none row-table" id="tab1">
+				<!--- Таблица ---------------------------------------------------------------->
+				<div class="col">
+					<div class="col-md-3 offset-md-9">
+						<!-- Button trigger modal -->
+						<button type="button" class="btn btn-success btn-sm" data-toggle="modal"
+						        data-target="#add_note">
+							Добавить запись
+						</button>
+						<!-- Modal -->
+						<div class="modal fade" id="add_note" data-backdrop="static" data-keyboard="false"
+						     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+							<div class="modal-dialog modal-lg">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="staticBackdropLabel">Окно дабавления записи</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<div class="input-group input-group-sm mb-3">
+											<div class="input-group-prepend">
+												<span class="input-group-text" id="inputGroup-sizing-sm">Текст</span>
+											</div>
+											<input type="text" class="form-control" aria-label="Sizing example input"
+											       aria-describedby="inputGroup-sizing-sm">
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">
+											Закрыть
+										</button>
+										<button type="button" class="btn btn-success btn-sm">Добавить</button>
+									</div>
+								</div>
 							</div>
 						</div>
-						<div class="col-2">
-							<div class="row">
-								<span class="font-Calibri-14">Время окончания:</span>
-							</div>
-							<div class="row">
-								<span id="partEndTime" class="font-Calibri-14"></span>
-							</div>
-						</div>
-						<div class="col-2">
-							<div class="row">
-								<span class="font-Calibri-14">Продолжительность:</span>
-							</div>
-							<div class="row">
-								<span id="partDurationTime"
-								      class="font-Calibri-14"></span>
-							</div>
-						</div>
-						<div class="col-2">
-							<div class="row">
-								<span class="font-Calibri-14">Аттестующий:</span>
-							</div>
-							<div class="row">
-								<span id="partOper" class="font-Calibri-14"></span>
-							</div>
-						</div>
-						<div class="col-2">
-							&lt;!&ndash;                    <a class="btn btn-success" id="pdfButton">PDF</a>&ndash;&gt;
-							<a class="btn btn-success font-Calibri-14" id="excelButton">Экспортировать
-								в Excel</a>
-						</div>
-						<div class="col-2">
-							<a class="btn btn-success font-Calibri-14" id="videoButton">Загрузить
-								видео <i class="fa fa-download"></i></a>
-						</div>
-					</div>
-					-->
-					<!--- Таблица -------------------------------------------------------------------------------------------------------->
-					<div class="row">
-						<table class="table table-striped font-Calibri-14"
-						       style="width:100%;" id="tPart">
-							<thead class="dark-background-color white-text table-border">
-								<tr>
-									<td class="table-dark"><span>пп №</span></td>
-									<td class="table-dark"><span>Номер вагона</span></td>
-									<td class="table-dark"><span>Время взвешивания</span>
-									</td>
-									<td class="table-dark"><span>Тара, т</span></td>
-									<td class="table-dark"><span>Тара НСИ, т</span></td>
-									<td class="table-dark">Дельта Тара, т</td>
-									<td class="table-dark"><span>Брутто, т</span></td>
-									<td class="table-dark"><span>Нетто, т</span></td>
-									<td class="table-dark"><span>+/- к гр/под,</span></td>
-									<td class="table-dark"><span>Левая тележка, т</span>
-									</td>
-									<td class="table-dark"><span>Правая тележка, т</span>
-									</td>
-									<td class="table-dark"><span>тел.1 - тел.2,</span>
-									</td>
-									<td class="table-dark">Груз-сть</td>
-									<td class="table-dark">Зона</td>
-									<td class="table-dark">Грузоотправитель</td>
-									<td class="table-dark">Грузополучатель</td>
-									<td class="table-dark">Вид материалов</td>
-									<td class="table-dark">Фото</td>
-									<td class="table-dark">Итог атт.</td>
-									<td class="table-dark">Причина неаттестации</td>
-								</tr>
-							</thead>
-							<tbody id="tbodyPart">
-							</tbody>
-						</table>
 					</div>
 				</div>
+				<div class="row">
+					<table class="table-sm table-striped font-Calibri-14" id="tPart">
+						<thead class="dark-background-color white-text table-border">
+							<tr>
+								<td class="table-dark td"><span>пп №</span></td>
+								<td class="table-dark td"><span>Название материала</span></td>
+								<td class="table-dark td"><span>Редактирование</span></td>
+								<td class="table-dark td"><span>Удаление</span></td>
+								<!--<td class="table-dark"><span>Время взвешивания</span>
+								</td>
+								<td class="table-dark"><span>Тара, т</span></td>
+								<td class="table-dark"><span>Тара НСИ, т</span></td>
+								<td class="table-dark">Дельта Тара, т</td>
+								<td class="table-dark"><span>Брутто, т</span></td>
+								<td class="table-dark"><span>Нетто, т</span></td>
+								<td class="table-dark"><span>+/- к гр/под,</span></td>
+								<td class="table-dark"><span>Левая тележка, т</span>
+								</td>
+								<td class="table-dark"><span>Правая тележка, т</span>
+								</td>
+								<td class="table-dark"><span>тел.1 - тел.2,</span>
+								</td>
+								<td class="table-dark">Груз-сть</td>
+								<td class="table-dark">Зона</td>
+								<td class="table-dark">Грузоотправитель</td>
+								<td class="table-dark">Грузополучатель</td>
+								<td class="table-dark">Вид материалов</td>
+								<td class="table-dark">Фото</td>
+								<td class="table-dark">Итог атт.</td>
+								<td class="table-dark">Причина неаттестации</td>-->
+							</tr>
+						</thead>
+						<tbody id="tbodyPart">
+							<tr>
+								<td class="td">1</td>
+								<td class="td">Просушенный каменный уголь</td>
+								<td class="td">
+									<button type="button" class="btn btn-secondary btn-sm" data-toggle="modal"
+									        data-target="#change_record">Изменить
+									</button>
+								</td>
+								<td class="td">
+									<button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+									        data-target="#remov_record">Удалить
+									</button>
+								</td>
+							</tr>
+							<tr>
+								<td class="td">2</td>
+								<td class="td">Огромные кучи коровьего навоза кориченевого цвета</td>
+								<td class="td">
+									<button type="button" class="btn btn-secondary btn-sm" data-toggle="modal"
+									        data-target="#change_record">Изменить
+									</button>
+								</td>
+								<td class="td">
+									<button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+									        data-target="#remov_record">Удалить
+									</button>
+								</td>
+							</tr>
+						</tbody>
+						<!-- Modal -->
+						<div class="modal fade" id="change_record" data-backdrop="static" data-keyboard="false"
+						     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+							<div class="modal-dialog modal-lg">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="staticBackdropLabel1">Окно изменения записи</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<div class="input-group input-group-sm mb-3">
+											<div class="input-group-prepend">
+												<span class="input-group-text" id="inputGroup-sizing-sm1">Текст</span>
+											</div>
+											<input type="text" class="form-control" aria-label="Sizing example input"
+											       aria-describedby="inputGroup-sizing-sm">
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">
+											Закрыть
+										</button>
+										<button type="button" class="btn btn-success btn-sm">Принять измненения</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Modal -->
+						<div class="modal fade" id="remov_record" data-backdrop="static" data-keyboard="false"
+						     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="staticBackdropLabel2">Окно удаления записи</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<!--<div class="input-group input-group-sm mb-3">
+											<div class="input-group-prepend">
+												<span class="input-group-text" id="inputGroup-sizing-sm2">Текст</span>
+											</div>
+											<input type="text" class="form-control" aria-label="Sizing example input"
+											       aria-describedby="inputGroup-sizing-sm">
+										</div>-->
+										<h5>Вы действительно хотите удалить запись из справочника?</h5>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">
+											Закрыть
+										</button>
+										<button type="button" class="btn btn-success btn-sm">Удалить запись</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</table>
+				</div>
+				<div class="col"></div>
 			</div>
 		</div>
+		<SCRIPT>
+			let a = 1 + 2;
+			console.log(a);
+		</SCRIPT>
 	</body>
 </html>
 

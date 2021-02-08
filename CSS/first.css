@@ -1,5 +1,5 @@
 .main{
-    background-color: cornflowerblue;
+    background-color: #343a40;
 }
 .div{
     border-color: currentColor;
@@ -10,6 +10,22 @@
     margin-bottom: 5px !important;
     margin-top: 5px !important;
 }
+.select2{
+    min-width: 600px;
+}
 .select-btn{
     background-color: cyan;
+}
+.ih-navbar{
+    background-color: #343a40 !important;
+    height: 50px;
+}
+.row-table{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.td{
+    padding-right: 2rem !important;
+    padding-left: 2rem !important;
+
 }
